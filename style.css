@@ -1,54 +1,165 @@
+/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
-    background-color: #333;
+    background: #333;
     color: #fff;
-    padding: 10px 0;
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
+    padding: 15px 0;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
 }
 
-nav ul li {
-    margin: 0 15px;
+header .logo {
+    font-size: 1.5em;
 }
 
-nav ul li a {
+header .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header .nav-links li {
+    margin-left: 20px;
+}
+
+header .nav-links a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-section {
-    padding: 60px 20px;
-    margin-top: 60px;
+header .nav-links a:hover {
+    color: #f4f4f4;
 }
 
-#home {
-    background: #f4f4f4;
+/* Home Section */
+.home {
+    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding-top: 100px;
 }
 
-#about, #projects, #contact {
-    background: #fff;
-    text-align: center;
+.home .container {
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.project {
+.home h1 {
+    font-size: 3em;
+}
+
+.home p {
+    font-size: 1.2em;
     margin: 20px 0;
+}
+
+.home .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5733;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.home .btn:hover {
+    background: #ff2e00;
+}
+
+/* Section Styles */
+section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.about, .skills, .portfolio, .contact {
+    background: #f4f4f4;
+}
+
+.skills .skill-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.skills .skill {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skills .skill i {
+    font-size: 2em;
+    color: #ff5733;
+}
+
+.skills .skill:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio .portfolio-item {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.portfolio .portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.portfolio .portfolio-item h3 {
+    margin: 15px 0;
+}
+
+.portfolio .portfolio-item .btn {
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.portfolio .portfolio-item .btn:hover {
+    background: #ff5733;
 }
 
 form {
@@ -70,4 +181,18 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #ff5733;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
